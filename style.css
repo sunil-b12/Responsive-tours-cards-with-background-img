@@ -1,0 +1,157 @@
+/* A CSS reset. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body{
+    font-family: cursive;
+}
+.container{
+    --max-width: 1440px;
+    --padding: 1rem;
+    width: min(var(--max-width), 100% - var(--padding)*2);
+    margin-inline: auto; /* Centering the container. */
+    padding-block: 2rem;
+}
+
+
+.even-rows{
+    --max-width: 1024px;
+    width: min(var(--max-width), 100%);
+    margin-inline: auto;
+}
+.heading{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 2rem;
+}
+/* Selecting the first child of the heading class. */
+.heading>:nth-child(1){
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: 700;
+    color: #FF5B00;
+}
+
+.heading>:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 41px;
+    background-color: #0A1c42;
+    color: #ffffff;
+    padding: 0.625rem 1.25rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.tour-grid-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr ));
+    gap: 2rem;
+}
+.tour-grid-cards>*{
+    position: relative;
+    border-radius: 50px;
+}
+
+.tour-grid-cards>*>:nth-child(1){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-card-info>:nth-child(1){
+    position: relative;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+
+}
+
+.price-stay{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+
+}
+
+/* Selecting the first child of the price-stay class. */
+.price-stay>:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    background-color: #FF5B00;
+    border-radius: 8px;
+    padding: 0.625rem 1rem;
+}
+/* Selecting the price class and then selecting the b tag inside of it. */
+.price:has(b){
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.price:has(b)>small{
+    font-size: 0.875rem;
+}
+.stay{
+    background-color: #0A1c42;
+    color: #ffffff;
+    padding: 0.5rem 0.625rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.fa-heart{
+    font-size: 2.5rem;
+}
+/* Selecting the second child of the first child of the grid-card-info class. */
+.grid-card-info>:nth-child(1)>:nth-child(2){
+    display: grid;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+    padding: 1.5rem 2rem;
+
+}
+
+.grid-card-info:has(h3){
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+}
+
+span{
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+
+}
+
+span:has(p){
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+span a{
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.see-dates{
+    padding-top: 2rem;
+}
